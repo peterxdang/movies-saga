@@ -42,6 +42,15 @@ const moviesReducer = (state = [], action) => {
     }
 }
 
+const setReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_MOOVIE':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 // Used to store the movie genres
 const genresReducer = (state = [], action) => {
     switch (action.type) {
@@ -57,6 +66,7 @@ const storeInstance = createStore(
     combineReducers({
         moviesReducer,
         genresReducer,
+        setReducer
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
