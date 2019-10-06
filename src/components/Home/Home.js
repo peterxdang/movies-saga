@@ -18,7 +18,8 @@ class Home extends Component {
 
     clickImage = (movie) => {
         console.log('click button works on Image', movie);
-        this.props.dispatch({type: 'SET_MOOVIE', payload: movie})
+        this.props.dispatch({type: 'SET_MOOVIE', payload: movie});
+        this.props.dispatch({type: 'FETCH_GENRE', payload: movie.id });
         
         this.props.history.push('/details');
     }
