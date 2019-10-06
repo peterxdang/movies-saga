@@ -43,8 +43,9 @@ function * fetchGenre(action) {
 
 function * editMovie (action) {
     try {
-        yield axios.put(`/movie`, action.payload);
-        // yield put({ type: 'SET_GENRES', payload: response.data });
+        const response = yield axios.put(`/movie`, action.payload);
+        //yield console.log(response);
+       // yield put({ type: 'SET_GENRES'});
     } catch (error) {
         console.log('Error while editing movie properties', error);
     }    
