@@ -3,7 +3,7 @@ import './App.css';
 import {connect} from 'react-redux';
 import Home from '../Home/Home';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import MovieDetails from '../MovieDetails/MovieDetails';
+import MovieDetails from '../MovieDetails/movieDetails';
 import Edit from '../Edit/Edit';
 
 class App extends Component {
