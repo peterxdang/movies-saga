@@ -4,8 +4,8 @@ import React, {Component} from 'react';
 class Edit extends Component {
 
     state = {
-        title: '',
-        description: '',
+        title: this.props.reduxState.setReducer.title,
+        description: this.props.reduxState.setReducer.description,
         id: this.props.reduxState.setReducer.id
     }
 
