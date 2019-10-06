@@ -21,7 +21,7 @@ class Home extends Component {
         this.props.dispatch({type: 'SET_MOOVIE', payload: movie});
         this.props.dispatch({type: 'FETCH_GENRE', payload: movie.id });
         
-        this.props.history.push('/details');
+        this.props.history.push(`/details/${movie.id}`);
     }
 
 
