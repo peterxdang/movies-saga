@@ -7,17 +7,39 @@ import React from 'react';
 
 class Edit extends Component {
 
+    state = {
+        title: '',
+        description: ''
+    }
+
+    inputValueFunction1(event) {
+        //console.log(event.target.value);
+        console.log(this.state.title);
+        this.setState ({
+            title: event.target.value
+        })
+    };
+    inputValueFunction2(event) {
+        console.log(event.target.value);
+    }
+
+    savingChange (event) {
+        event.preventDefault();
+       
+    }
+
+
   render() {
     return (
       
         <div className="App">
             <h1>Edit Page</h1>
-            <button>Save</button> <button>Cancel</button>
+            <button onClick = {this.savingChange}>Save</button> <button>Cancel</button>
             <br/> <br/>
-            <input placeholder = "title"></input>
+            <input onChange = {(event) => {this.inputValueFunction1(event)}}placeholder = "title"></input>
             <br/> <br/>
-            < textarea placeholder = "description"></textarea>
-         
+            < textarea onChange = {(event) => {this.inputValueFunction2(event)}}placeholder = "description"></textarea>
+            <p>{this.state.title}</p>
         </div>
        
     
