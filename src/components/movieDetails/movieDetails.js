@@ -14,6 +14,7 @@ class MovieDetails extends Component {
     }
   }
 
+  //some Notes
 //This page render movie description and genre based on its ID
   render() {
     const movieFromList = this.props.reduxState.setReducer;
