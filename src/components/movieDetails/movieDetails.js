@@ -5,7 +5,14 @@ import {connect} from 'react-redux';
 
 class MovieDetails extends Component {
 
-
+  clickButtonFunction (button) {
+    if (button === 'back') {
+      this.props.history.push('/');
+    }
+    else if (button === 'edit') {
+      this.props.history.push('/edit');
+    }
+  }
 
 //This page render movie description and genre based on its ID
   render() {
@@ -13,6 +20,8 @@ class MovieDetails extends Component {
     const genreFromList = this.props.reduxState.genresReducer;
     return (
       <div className="App">
+        <button onClick = {() => {this.clickButtonFunction('back')}}>Back to List</button>
+        <button onClick = {() => {this.clickButtonFunction('edit')}} >Edit</button>
         <h1>{movieFromList.title}</h1>
         <br/>
         {movieFromList.description}
