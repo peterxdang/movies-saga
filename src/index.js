@@ -16,6 +16,7 @@ import createSagaMiddleware from 'redux-saga';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIE', fetchMovies )
     yield takeEvery('FETCH_GENRE', fetchGenre)
+    yield takeEvery('EDIT_MOVIE', editMovie)
 }
 
 //function GET promise to server -> router -> database retrieve
@@ -37,6 +38,15 @@ function * fetchGenre(action) {
         yield put({ type: 'SET_GENRES', payload: response.data });
     } catch (error) {
         console.log('Error while fetching movies', error);
+    }    
+}
+
+function * editMovie (action) {
+    try {
+        yield axios.put(`/movie`, action.payload);
+        // yield put({ type: 'SET_GENRES', payload: response.data });
+    } catch (error) {
+        console.log('Error while editing movie properties', error);
     }    
 }
 
