@@ -13,6 +13,9 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <header className = "App-header">
+            <h1>Welcome to Movies!</h1>
+          </header>
           <Route exact path= "/" component={Home} />
           <Route exact path= "/details/:id" component={MovieDetails} />
           <Route exact path= "/edit" component={Edit} />
