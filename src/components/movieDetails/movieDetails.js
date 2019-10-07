@@ -14,19 +14,22 @@ class MovieDetails extends Component {
     }
   }
 
-  //some Notes
-//This page render movie description and genre based on its ID
+//Renders movie description and genre
   render() {
     const movieFromList = this.props.reduxState.setReducer;
     const genreFromList = this.props.reduxState.genresReducer;
     return (
       <div className="App">
+
         <button onClick = {() => {this.clickButtonFunction('back')}}>Back to List</button>
         <button onClick = {() => {this.clickButtonFunction('edit')}} >Edit</button>
+
         <h1>{movieFromList.title}</h1>
+
         <br/>
         {movieFromList.description}
         <br/>
+
         <ul>
           {genreFromList.map((genre) => {
             return (
@@ -34,6 +37,7 @@ class MovieDetails extends Component {
             );
           })}
         </ul>
+        
       </div>
 
     );

@@ -3,21 +3,25 @@ import React, {Component} from 'react';
 
 class Edit extends Component {
 
+//store each movie information
+//updated movie information appears while navigating back to details page
     state = {
         title: this.props.reduxState.setReducer.title,
         description: this.props.reduxState.setReducer.description,
         id: this.props.reduxState.setReducer.id
     }
 
+    //changes local state properties without mutation
     inputValueFunction(event, movieProperties) {
-        //console.log(event.target.value);
-        //console.log(this.state.title);
         this.setState ({
             ...this.state,
             [movieProperties]: event.target.value
         })
     }
 
+    //save function passes local state "movie" 
+    //store one specific movie in Redux setReducer
+    //dispatch edited movie object to editReducer for put request
     savingChange (movie) {
         this.props.dispatch({ type: 'EDIT_MOVIE', payload: movie });
         this.props.dispatch({type: 'SET_MOOVIE', payload: movie});
@@ -26,6 +30,7 @@ class Edit extends Component {
 
     }
 
+    //navigate user back to details page
     cancelButton () {
         console.log('cancel button woorking');
         this.props.history.push(`/details/${this.state.id}`);

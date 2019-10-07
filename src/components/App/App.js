@@ -9,22 +9,18 @@ import Edit from '../Edit/Edit';
 class App extends Component {
 
   // Renders the entire app on the DOM
-
   render() {
     return (
       <Router>
         <div className="App">
-    
           <Route exact path= "/" component={Home} />
           <Route exact path= "/details/:id" component={MovieDetails} />
           <Route exact path= "/edit" component={Edit} />
         </div>
-       
       </Router>
     );
   }
 }
-
 
 const mapStateToProps = reduxState => ({
   reduxState,

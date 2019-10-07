@@ -4,13 +4,16 @@ import './index.css';
 import App from './components/App/App.js';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+
 // Provider allows us to use redux within our react app
 import { Provider } from 'react-redux';
-import logger from 'redux-logger';
+
 // Import saga middleware
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 import createSagaMiddleware from 'redux-saga';
+
 
 // Create the rootSaga generator function
 function* rootSaga() {
@@ -19,8 +22,8 @@ function* rootSaga() {
     yield takeEvery('EDIT_MOVIE', editMovie)
 }
 
-//function GET promise to server -> router -> database retrieve
 //movie data and appear and mount on DOM
+//GET request, to server/router.movie.js to obtain all movie data
 function * fetchMovies() {
     try {
         const response = yield axios.get('/movie');
@@ -31,6 +34,8 @@ function * fetchMovies() {
     }    
 }
 
+//generator function, GET request
+//retrieves genre data for each movie and appear on movieDetails page
 function * fetchGenre(action) {
     try {
         const response = yield axios.get(`/genre/${action.payload}` );
@@ -41,6 +46,7 @@ function * fetchGenre(action) {
     }    
 }
 
+//generator function for editing/updating movie's title/description
 function * editMovie (action) {
     try {
         yield axios.put(`/movie`, action.payload);
@@ -62,6 +68,7 @@ const moviesReducer = (state = [], action) => {
     }
 }
 
+//storing clicked movie information in setReducer
 const setReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOOVIE':
@@ -71,7 +78,7 @@ const setReducer = (state = [], action) => {
     }
 }
 
-// Used to store the movie genres
+//store the movie genres in this reducer
 const genresReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
