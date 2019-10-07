@@ -3,9 +3,6 @@ import '../App/App.css';
 import {connect} from 'react-redux';
 
 class Home extends Component {
-
-
-  
   // Renders the entire app on the DOM
 
     componentDidMount(){
