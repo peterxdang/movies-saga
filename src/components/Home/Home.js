@@ -31,7 +31,7 @@ class Home extends Component {
         <ul>
             {this.props.reduxState.moviesReducer.map((movie) => {
                 return (
-                    <div  key={movie.id}><img onClick = {() => this.clickImage(movie)} src = {movie.poster} alt = "movie poster details"/>{movie.title}{movie.description}</div>
+                    <div className = "eachMovie" key={movie.id}><img onClick = {() => this.clickImage(movie)} src = {movie.poster} alt = "movie poster details"/></div>
                 );
             })}
         </ul>
