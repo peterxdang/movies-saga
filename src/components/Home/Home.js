@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import '../App/App.css';
 import {connect} from 'react-redux';
 
+import {Grid, Paper} from '@material-ui/core'
+
 class Home extends Component {
   // Renders the entire app on the DOM
 
+  
     componentDidMount(){
         this.getMovies();
   }
@@ -25,13 +28,18 @@ class Home extends Component {
     render() {
     return (
       <div className="App">
-        <ul>
+        <Grid container direction="row"justify="center" alignItems="center">
+        
+          
             {this.props.reduxState.moviesReducer.map((movie) => {
                 return (
-                    <div className = "eachMovie" key={movie.id}><img onClick = {() => this.clickImage(movie)} src = {movie.poster} alt = "movie poster details"/></div>
+                  
+                    <img onClick = {() => this.clickImage(movie)} src = {movie.poster} alt = "movie poster details"/>
+                
                 );
             })}
-        </ul>
+        
+        </Grid>
       </div>
     );
   }
