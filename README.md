@@ -1,23 +1,30 @@
-# Project Name
-
-[# Name of Application
+# Project Name: SAGA Movie List
 ​
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
+The purpose of this application is to allow users to navigate through a list of movies. Each movie directs the user to another route where they obtain information about their title and description, and updating them from a database. This javascript app requires using React, SAGA and routers/routes to design its architecture. In addition, this app uses redux to store and manipulate data from the database.
+
+
 ​
 ## Built With
+
+​-Javascript
+-Route/Routers
+-SAGA/Generator Functions
+-React
+-Material-ui
+-Postico/PostgreSql
+
+
 ​
-List technologies and frameworks here
-​
-## Getting Started
-​
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 ​
 ### Prerequisites
 ​
 Link to software that is required before you attempt to start the app (e.g. node, mongo).
 ​
 - [Node.js](https://nodejs.org/en/)
-- List other prerequisites here
+- [Material-Ui] (https://material-ui.com/)
+- [Redux-SAGA] (https://redux-saga.js.org)
+- [React] (https://react-redux.js.org/)
+
 ​
 ​
 ### Installing
@@ -25,41 +32,36 @@ Link to software that is required before you attempt to start the app (e.g. node
 Steps to get the development environment running.
 ​
 1. Download this project.
-2. `npm install`
-3. `npm start`
-​
-And so on...
-​
-## Screen Shot
-​
-Include one or two screen shots of your project here (optional). Remove if unused.
-​
-## Documentation
-​
-Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused.
+2. Download Postico
+3. `npm install`
+4. `npm run server`
+5. `npm run client`
 ​
 ### Completed Features
 ​
 High level list of items completed.
 ​
-- [x] Feature a
-- [x] Feature b
-​
+- [x] Movies retrieved from posgresSql/database and appear on DOM
+- [x] Database containing two table and junction table
+- [x] Edit button in movieDetail page routes user to the edit page
+- [x] Edit specific movies from the database using 2 input boxes
+- [x] Movie image navigates user to movie details page
+- [x] Cancel/Save button navigates user back to details page
+- [x] recent edited changes of title/description appear in details page
+- [x] genres for each movie display in details page
+- [x] apply grid using material-ui
+
 ### Next Steps
 ​
 Features that you would like to add at some point in the future.
 ​
-- [ ] Feature c
-​
-## Deployment
-​
-Add additional notes about how to deploy this on a live system
-​
+- [ ] applying material-ui to style the buttons and grid
+
 ## Authors
 ​
-* Name of author(s)
+* Peter Dang
 ​
 ​
 ## Acknowledgments
 ​
-* Hat tip to anyone who's code was used
+* Prime Digital Academy
